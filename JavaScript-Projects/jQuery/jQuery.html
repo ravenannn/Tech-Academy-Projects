@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        $(document).ready(function() { //When entire document is done loading, do this function
+            //when the document is loaded, run this function
+            //grab html tag and append the following information inside
+            $("html").append(
+               //Draw body content and add the following
+               //Continue on next line with forward slash
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                            <p id='1'>Paragraph 1</p>\
+                            <p id='2'>Paragraph 2</p>\
+                            <p id='3'>Paragraph 3</p>\
+                            <button class='alert'>Click me!</button>\
+                        </div>\
+                    </div>\
+                </body>"
+            );
+            //If we gave the element an id, we would instead use id name or class name with #
+            //Utilize css jquery methods
+            $("#2").css({"color":"red"});
+            //target all paragraphs and toggle them up over 1.8 seconds
+            $("p").toggle(1800);
+            //target paragraph 3, when clicked
+            $("#3").click(function() {
+                //hide the h1 header
+                $('h1').hide();
+            });
+            //target button and when clicked
+            $("button.alert").on("click", function() {
+                //show pop up alert
+                alert("A button with the alert class was clicked!");
+            });
+        });
+
+
+    </script>
+</html>
